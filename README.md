@@ -1,38 +1,34 @@
-﻿# Quantam-it-task
-This project is a full-stack authentication system built using Vite (React), Node.js, Express, MongoDB, and JWT. It includes user registration, login, and a protected page that displays user information.
+# Quantam-it-task
 
-Features
+This project is a **full-stack authentication system** built using **Vite (React), Node.js, Express, MongoDB, and JWT**. It includes **user registration**, **login**, and **protected pages** that display user information.
 
-User Registration with name, date of birth, email, and password
+## 🚀 Features
 
-User Login with JWT-based authentication
+- ✅ **User Registration** with name, date of birth, email, and password  
+- 🔒 **User Login** with JWT-based authentication  
+- 🔐 **Protected Routes** for authenticated users  
+- 📱 **Responsive Design** with a modern UI  
+- 💾 **Local Storage** for session management  
 
-Protected routes for authenticated users
+## 🛠️ Tech Stack
 
-Responsive design with a modern UI
+- **Frontend:** Vite (React.js)  
+- **Backend:** Node.js, Express.js, MongoDB  
+- **Authentication:** JWT (JSON Web Token)  
 
-Local storage for session management
+## 📋 Prerequisites
 
-Tech Stack
+- **Node.js (v18+)**  
+- **MongoDB database** (local or cloud)  
 
-Frontend: Vite (React.js)
+## 🚀 Getting Started
 
-Backend: Node.js, Express.js, MongoDB
+### 1. Clone the Repository
 
-Authentication: JWT (JSON Web Token)
+```bash
+git clone https://github.com/krishnaa-1/Quantam-it-task.git
+cd Quantam-it-task
 
-Prerequisites
-
-Node.js (v18+)
-
-MongoDB database (local or cloud)
-
-Getting Started
-
-1. Clone the Repository
-
-git clone <your-repo-url>
-cd your-project-folder
 
 2. Install Dependencies
 
