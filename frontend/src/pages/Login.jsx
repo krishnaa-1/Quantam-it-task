@@ -7,26 +7,25 @@ import './Auth.css';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [popupMessage, setPopupMessage] = useState(''); // For success and error messages
+    const [popupMessage, setPopupMessage] = useState('');
     const [showPopup, setShowPopup] = useState(false);
     const navigate = useNavigate();
 
-    const handleLogin = async () => {
+    const handleLogin = async (e) => {
+        e.preventDefault(); // prevent page reload on form submit
+
         try {
             const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, { username, password });
-            // console.log(res)
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user', JSON.stringify(res.data.user));
             setPopupMessage('Login successful! Redirecting...');
             setShowPopup(true);
 
-            // Navigate to dashboard after delay
             setTimeout(() => {
                 setShowPopup(false);
                 navigate('/dashboard');
             }, 2000);
         } catch (err) {
-            console.log(err)
             const errorMessage = err.response?.data?.msg || 'Login failed';
             setPopupMessage(errorMessage);
             setShowPopup(true);
@@ -34,7 +33,7 @@ const Login = () => {
     };
 
     const handleOkClick = () => {
-        setShowPopup(false); // Close the popup on OK click
+        setShowPopup(false);
     };
 
     return (
@@ -46,7 +45,7 @@ const Login = () => {
                 SIGN IN
             </div>
 
-            <div id='loginBox'>
+            <form id='loginBox' onSubmit={handleLogin}>
                 <div id='wave'>
                     <img src="https://t3.ftcdn.net/jpg/05/40/08/38/360_F_540083851_WPHVKF00Oxmdtsg0JYLh1ouTTjKKfiaJ.jpg" alt="" />
                 </div>
@@ -63,6 +62,7 @@ const Login = () => {
                             className="username-input"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            required
                         />
                     </div>
 
@@ -75,6 +75,7 @@ const Login = () => {
                             className="password-input"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
                 </div>
@@ -87,10 +88,9 @@ const Login = () => {
                     </label>
                     <a href='#' className='forgot-password'>Forget your password?</a>
                 </div>
-                <button id='login-button' onClick={handleLogin}>LOGIN</button>
-            </div>
+                <button id='login-button' type='submit'>LOGIN</button>
+            </form>
 
-            {/* Popup Component */}
             {showPopup && (
                 <>
                     <div className="popup-backdrop" />
