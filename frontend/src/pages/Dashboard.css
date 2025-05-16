@@ -1,0 +1,179 @@
+/* Modern Smooth Dashboard.css */
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.dashboard-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background-color: var(--bg-color);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    font-family: var(--font-family);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 2px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.username {
+    margin-right: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Button */
+.logout-button {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    font-family: var(--font-family);
+}
+
+.dashboard-table th, .dashboard-table td {
+    padding: 15px 20px;
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    text-align: left;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dashboard-table th {
+    font-size: 1.1em;
+    background-color: var(--header-bg-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.dashboard-table tbody tr {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-table tbody tr:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.02);
+}
+
+/* Action Icons */
+.action-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.action-icon.settings {
+    color: var(--accent-color);
+}
+
+.action-icon.delete {
+    color: var(--danger-color);
+}
+
+.action-icon:hover {
+    color: #ffffff;
+}
+
+/* Scrollbar */
+.dashboard-table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dashboard-table-container::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+.dashboard-table-container::-webkit-scrollbar-track {
+    background-color: var(--header-bg-color);
+    border-radius: 10px;
+}
+.dashboard-table-container {
+    overflow-y: auto;
+    max-height: 77vh;
+    background-color: var(--header-bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 30px var(--shadow-color);
+    overflow-x: auto; /* keep horizontal scrolling if needed */
+}
+
+/* Make thead sticky */
+.dashboard-table thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--header-bg-color);
+    z-index: 10; /* keep header above body rows */
+}
+.logo {
+    display: flex;
+    align-items: center;
+    /* Optional: set a max height so the logo doesn't get too big */
+    max-height: 50px;
+    /* Optional: give some spacing on the right if you have text next to it */
+    margin-right: 10px;
+}
+
+.logo img {
+    max-height: 100%;
+    width: auto;
+    display: block;
+    /* Optional smooth scaling on hover */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
